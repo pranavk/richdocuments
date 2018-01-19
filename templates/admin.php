@@ -17,7 +17,7 @@ script('richdocuments', 'admin');
 
     <input type="checkbox" class="test-server-enable" id="test_server_enable-richdocuments" />
     <label for="test-server-enable"><?php p($l->t('Enable test server for specific groups')) ?></label><br/>
-    <p id="test-server-section" class="indent <?php if ($_['test_server_groups'] === '' || $_['test_wopi_url'] === '') p('hidden') ?>">
+    <p id="test-server-section" class="indent <?php if ($_['test_server_groups'] === '' || $_['test_wopi_url'] == '') p('hidden') ?>">
         <label for="test_server_group_select"><?php p($l->t('Groups')) ?></label>
         <input type="hidden" id="test_server_group_select" value="<?php p($_['test_server_groups'])?>" title="<?php p($l->t('None')); ?>" style="width: 200px" /><br/>
 
@@ -35,7 +35,7 @@ script('richdocuments', 'admin');
     <input type="checkbox" class="doc-format-ooxml" id="doc_format_ooxml_enable-richdocuments" <?php p($_['doc_format'] === 'ooxml' ? 'checked' : '') ?> />
     <label for="doc_format_ooxml_enable-richdocuments"><?php p($l->t('Use OOXML by default for new files')) ?></label>
 	<br/>
-    <input type="checkbox" id="enable_external_apps_cb-richdocuments" <?php p($_['external_apps'] !== '' ? 'checked' : '') ?> />
+    <input type="checkbox" id="enable_external_apps_cb-richdocuments" <?php p($_['external_apps'] != '' ? 'checked' : '') ?> />
     <label for="enable_external_apps_cb-richdocuments"><?php p($l->t('Enable access for external apps')) ?></label>
 	<div id="enable-external-apps-section" class="indent <?php if ($_['external_apps'] == '') p('hidden') ?>" >
 	    <div id="external-apps-section">
@@ -48,7 +48,7 @@ script('richdocuments', 'admin');
 	</div>
 
 	<br/>
-	<input type="checkbox" id="enable_canonical_webroot_cb-richdocuments" <?php p($_['canonical_webroot'] !== '' ? 'checked' : '') ?> />
+	<input type="checkbox" id="enable_canonical_webroot_cb-richdocuments" <?php p($_['canonical_webroot'] != '' ? 'checked' : '') ?> />
 	<label for="canonical_webroot_cb-richdocuments"><?php p($l->t('Use Canonical webroot')) ?></label>
 	<div id="enable-canonical-webroot-section" class="indent <?php if ($_['canonical_webroot'] == '') p('hidden') ?>" >
 	<input type="text" id="canonical-webroot" name="canonical-webroot-name" value="<?php p($_['canonical_webroot']) ?>">
